@@ -1,0 +1,108 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Contact</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	
+<body >
+
+    <script>
+		function processGrade() {
+			var d = new Date();
+			if(d.getHours() < 12) {
+				document.getElementById("graderes").innerHTML = "Good morning " + document.getElementById("namefield").value;
+			}
+			if((d.getHours() < 19) && (d.getHours() > 11)) {
+				document.getElementById("graderes").innerHTML = "Good afternoon " + document.getElementById("namefield").value;
+			}
+			if(d.getHours() > 18) {
+				document.getElementById("graderes").innerHTML = "Good night " + document.getElementById("namefield").value;
+			}
+			
+			var x = document.getElementById("expectedgrade").value;
+			var pc = (((x/5)*100) + "%");
+			
+			switch(x) {
+				case "0":
+					document.getElementById("expected").innerHTML = (pc +" "+ " Go home already");
+					break;
+				case "1":
+					document.getElementById("expected").innerHTML = (pc +" " + "Try next time");
+					break;
+				case "2":
+					document.getElementById("expected").innerHTML = (pc +" " + "Pass");
+					break;
+				case "3":
+					document.getElementById("expected").innerHTML = (pc +" "+ "Decent.");
+					break;
+				case "4":
+					document.getElementById("expected").innerHTML = (pc +" "+ "Good");
+					break;
+				case "5":
+					document.getElementById("expected").innerHTML = (pc +" "+ "Excellent");
+					break;
+				default:
+					document.getElementById("expected").innerHTML = (pc +" "+ "what now");
+			}
+		}
+		
+	</script>
+<p>Last Modified:</p>
+<p id="si"></p>
+<script>
+	var x = document.lastModified;
+	x = x.toLocaleString('en-GB');
+	document.getElementById("si").innerHTML = x;
+</script>
+ <div id="header">
+  <h1><a href="index.html">Salaha Ilyas</a></h1>
+ 
+  <ul id="nav">
+  <li><a href="home.html">Home</a>
+    </li>
+  <li><a href="about.html">About</a>
+    </li>
+    <li><a href="contact.html">Contact</a>
+    </li>
+	<li><a href="CV.html">CV</a>
+    </li>
+	<li><a href="https://www.instagram.com/flowerland800/">Instagram</a>
+    </li>
+	
+	
+  </ul>
+</div>
+<main>
+<form>
+<p>Enter your name:</p>
+<input type="text" name="usname" value="" id="namefield"/>
+<p>What grade should you get?</p>
+<select name="exgrade" id="expectedgrade">
+<option>0</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select>
+<input type="button" value="Submit" onclick="processGrade()"/>
+</form>
+<div id="modsect">
+<p id="graderes"></p>
+<p id="expected"></p>
+</div>
+</main>
+  <img src="leafy.jpg" alt="leafy-image" >
+  
+	<footer>
+			<p>
+				Webpage made by <a href="/" target="_blank">[Salaha Ilyas]</a>
+			</p>
+		</footer>
+</body>
+
+
+</html>
